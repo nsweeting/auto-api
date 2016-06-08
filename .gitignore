@@ -1,6 +1,8 @@
 /.bundle/
 /.yardoc
 /Gemfile.lock
+/bin/console
+/bin/setup
 /_yardoc/
 /coverage/
 /doc/
