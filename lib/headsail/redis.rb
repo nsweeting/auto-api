@@ -14,6 +14,8 @@ module Headsail
     def add(data)
       @connection.incr(next_id_key)
       @connection.set(new_key, data)
+    rescue
+      setup_connection
     end
 
     private
@@ -32,6 +34,10 @@ module Headsail
 
     def setup_connection
       @connection = ::Redis.new(url: ENV['REDIS_URL'])
+      @connection.ping
+    rescue
+      Headsail.err("Failed to connect to Redis server at ENV 'REDIS_URL'.")
+      exit 1
     end
 
     def setup_service

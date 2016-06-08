@@ -14,6 +14,7 @@ module Headsail
     def run
       @tasks.each { |task| @threads << task.run }
       @threads.map(&:execute)
+      Headsail.info('Started up the Headsail Client.')
       loop { sleep 300 }
     end
 

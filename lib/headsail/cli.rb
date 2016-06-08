@@ -11,7 +11,6 @@ module Headsail
     # Creates a new CLI object, parsing the arguments that are passed to it,
     # and readying a Launcher to be run
     #
-    # @param argv [Array] an array of command-line arguments
     def initialize(argv)
       @argv = argv
       @configure = nil
@@ -57,7 +56,7 @@ module Headsail
     def parse_options
       @parser.parse!(@argv)
     rescue
-      print 'Unsupported Options'
+      Headsail.err('Unsupported options entered in CLI.')
       exit 1
     end
   end

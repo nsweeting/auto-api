@@ -4,10 +4,13 @@ module Headsail
 
     def initialize(config)
       @name = config['name']
-      @timer = config['timer']
+      @timer = config['timer'].to_i
       @oauth = config['oauth']
       @method = config['request']['method']
       @uri = build_uri(config['request'])
+    rescue
+      Headsail.err('Improper API YAML format.')
+      exit 1
     end
 
     private
