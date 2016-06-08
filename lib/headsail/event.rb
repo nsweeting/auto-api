@@ -7,8 +7,8 @@ module Headsail
       @logger = Logger.new(STDOUT)
     end
 
-    def get_request(http)
-      message = "#{@event_name} / GET REQUEST / #{http.code}-#{http.code_status.to_s}"
+    def request(http, method)
+      message = "#{@event_name} / #{method} REQUEST / #{http.code} - #{http.code_status.to_s}"
       @logger.info(message)
     end
   end

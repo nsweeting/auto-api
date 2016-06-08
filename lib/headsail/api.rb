@@ -1,12 +1,13 @@
 module Headsail
   class API
-    attr_reader :name, :timer, :get, :oauth
+    attr_reader :name, :timer, :method, :uri, :oauth
 
     def initialize(config)
       @name = config['name']
       @timer = config['timer']
       @oauth = config['oauth']
-      @get = build_uri(config['get'])
+      @method = config['request']['method']
+      @uri = build_uri(config['request'])
     end
 
     private

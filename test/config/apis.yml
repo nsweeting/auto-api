@@ -1,7 +1,8 @@
 -
   name: Weather1
-  timer: 60
-  get:
+  timer: 120
+  request:
+    method: GET
     uri: http://api.openweathermap.org/data/2.5/weather
     params:
       lat: '35'
@@ -9,10 +10,11 @@
       appid: 2f3902e11e8a119d9a9f7252f2c2bfb4
 -
   name: Weather2
-  timer: 10
-  get:
+  timer: 20
+  request:
+    method: GET
     uri: http://api.openweathermap.org/data/2.5/weather
     params:
       lat: '37'
-      lon: '139'
+      lon: '134'
       appid: 2f3902e11e8a119d9a9f7252f2c2bfb4

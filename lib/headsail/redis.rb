@@ -2,14 +2,14 @@ require 'redis'
 
 module Headsail
   class Redis
+    attr_reader :connection
+
     def initialize(key_name)
       @key_name = key_name
       setup_connection
       setup_service
       setup_next_id
     end
-
-    attr_reader :connection
 
     def add(data)
       @connection.incr(next_id_key)

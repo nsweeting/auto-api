@@ -6,6 +6,8 @@ module Headsail
   # Handles the start of Headsail via command line
   #
   class CLI
+    attr_reader :launcher
+
     # Creates a new CLI object, parsing the arguments that are passed to it,
     # and readying a Launcher to be run
     #
@@ -19,8 +21,6 @@ module Headsail
       parse_options
       @launcher = Launcher.new(@configure)
     end
-
-    attr_reader :launcher
 
     def run
       @launcher.run

@@ -4,11 +4,11 @@ module Headsail
   # Determines the action to be taken based on the Configure object
   #
   class Launcher
+    attr_reader :client
+
     def initialize(configure)
       @configure = configure
     end
-
-    attr_reader :client
 
     def run
       case
