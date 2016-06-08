@@ -6,17 +6,17 @@ module Headsail
   end
 
   def self.info(msg)
-    log.info("[ \e[32m#{'OK'}\e[0m ] #{msg}")
+    log.info("[ \e[32m#{'INFO'}\e[0m ] #{msg}")
   end
 
   def self.err(msg)
-    log.info("[ \e[31m#{'ERR'}\e[0m ] #{msg}")
+    log.info("[ \e[31m#{'ERROR'}\e[0m ] #{msg}")
   end
 
   def self.build_logger
     logger = Logger.new(STDOUT)
     logger.formatter = proc do |severity, datetime, progname, msg|
-      "#{severity}: #{msg}\n"
+      "#{msg}\n"
     end
     logger
   end
