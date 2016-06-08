@@ -15,10 +15,10 @@ Gem::Specification.new do |spec|
   spec.bindir        = "lib"
   spec.executables   = ['headsail']
   spec.require_paths = ["lib"]
+  spec.add_runtime_dependency "redis", "~> 3.3.0"
+  spec.add_runtime_dependency "concurrent-ruby", "~> 1.0.2"
+  spec.add_runtime_dependency "oauth", "~> 0.5.1"
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
-  spec.add_development_dependency "redis"
-  spec.add_development_dependency "concurrent-ruby"
-  spec.add_development_dependency "oauth"
 end
