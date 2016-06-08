@@ -19,6 +19,8 @@ module Headsail
 
     private
 
+    # Creates a new Client object - the main process used for data collection
+    #
     def start_client
       @client = Client.new(@configure)
       @client.run

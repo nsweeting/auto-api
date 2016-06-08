@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.email         = ["nsweeting@gmail.com"]
   spec.summary       = "Automated API data retrieval and storage."
   spec.description   = "Automated API data retrieval and storage."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "lib"
@@ -20,7 +19,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "redis"
-  spec.add_development_dependency "byebug"
   spec.add_development_dependency "concurrent-ruby"
   spec.add_development_dependency "oauth"
 end

@@ -1,6 +1,8 @@
 require 'headsail/task'
 
 module Headsail
+  # The main event loop for retrieving data from APIS
+  #
   class Client
     def initialize(configure)
       @configure = configure
