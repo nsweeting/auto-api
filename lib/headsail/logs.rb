@@ -1,4 +1,6 @@
 module Headsail
+  STDOUT.sync = true
+
   def self.log
     @logger ||= Logger.new(STDOUT)
   end

@@ -1,4 +1,3 @@
 require 'headsail/cli'
-require 'headsail/util'
+require 'headsail/logs'
 require 'headsail/version'
-require 'byebug'
