@@ -1,0 +1,18 @@
+-
+  name: Test
+  timer: 5
+  request:
+    method: GET
+    uri: http://test.com/todos
+-
+  name: BadRequest
+  timer: 5
+  request:
+    method: GET
+    uri: http://test.com/bad_request
+-
+  name: ServerProblem
+  timer: 5
+  request:
+    method: GET
+    uri: http://test.com/server_problem

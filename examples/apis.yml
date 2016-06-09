@@ -1,7 +1,6 @@
-
 -
-  name: Weather1
-  timer: 120
+  name: Weather
+  timer: 20
   request:
     method: GET
     uri: http://api.openweathermap.org/data/2.5/weather
@@ -10,18 +9,8 @@
       lon: '139'
       appid: <%= ENV['WEATHER_KEY'] %>
 -
-  name: Weather2
-  timer: 20
-  request:
-    method: GET
-    uri: http://api.openweathermap.org/data/2.5/weather
-    params:
-      lat: '37'
-      lon: '134'
-      appid: <%= ENV['WEATHER_KEY'] %>
--
   name: Twitter
-  timer: 10
+  timer: 120
   oauth:
     consumer_key: <%= ENV['TWITTER_CONSUMER_KEY'] %>
     consumer_secret: <%= ENV['TWITTER_CONSUMER_SECRET'] %>

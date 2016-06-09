@@ -3,7 +3,7 @@ require 'headsail/api'
 
 class APITest < Minitest::Test
   def setup
-    @apis = YAML.load(ERB.new(File.read('test/config/apis.yml')).result)
+    @apis = YAML.load(ERB.new(File.read('test/fixtures/apis.yml')).result)
     @api = Headsail::API.new(@apis.first)
   end
 

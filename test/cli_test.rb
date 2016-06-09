@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CLITest < Minitest::Test
   def setup
-    @cli = Headsail::CLI.new(['-a', 'test/config/apis.yml'])
+    @cli = Headsail::CLI.new(['-a', 'test/fixtures/apis.yml'])
   end
 
   def test_new_cli_creates_launcher
