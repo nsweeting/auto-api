@@ -1,4 +1,8 @@
 # Headsail
+---
+
+[![Code Climate](https://codeclimate.com/github/nsweeting/headsail/badges/gpa.svg)](https://codeclimate.com/github/nsweeting/headsail)
+[![security](https://hakiri.io/github/nsweeting/headsail/master.svg)](https://hakiri.io/github/nsweeting/headsail/master)
 
 Headsail is a lightweight client framework for automating the task of API data retrieval and storage. Utilizing simple YAML files, we can create an unlimited number of recurring API retrieval jobs, with the responses being stored in a Redis database.
 
