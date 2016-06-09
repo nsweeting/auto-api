@@ -7,47 +7,26 @@ module Headsail
     def initialize(key_name)
       @key_name = key_name
       setup_connection
-      setup_service
-      setup_next_id
+      setup_task
     end
 
     def add(data)
-      @connection.incr(next_id_key)
-      @connection.set(new_key, data)
+      @connection.lpush(@key_name, data)
     rescue
       setup_connection
     end
 
     private
 
-    def new_key
-      "#{@key_name}:#{next_id}"
-    end
-
-    def next_id
-      @connection.get(next_id_key)
-    end
-
-    def next_id_key
-      @next_id_key ||= "#{@key_name}:next_id"
-    end
-
     def setup_connection
       @connection = ::Redis.new(url: ENV['REDIS_URL'])
       @connection.ping
     rescue
-      Headsail.err("Failed to connect to Redis server at ENV 'REDIS_URL'.")
-      exit 1
+      Headsail.err("Failed to connect to Redis server at ENV 'REDIS_URL'.", :exit)
     end
 
-    def setup_service
-      return if @connection.exists(@key_name)
-      @connection.set(@key_name, true)
-      @connection.lpush('apis', @key_name)
-    end
-
-    def setup_next_id
-      @connection.set(next_id_key, 0) unless @connection.exists(next_id_key)
+    def setup_task
+      @connection.sadd('apis', @key_name)
     end
   end
 end

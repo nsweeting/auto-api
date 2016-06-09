@@ -1,6 +1,6 @@
 # Headsail
 
-Headsail automates the task of API data retrieval and storage. Utilizing simple YAML files, we can create recurring API retrieval jobs, with the response being stored in a Redis DB.
+Headsail is a lightweight client framework for automating the task of API data retrieval and storage. Utilizing simple YAML files, we can create recurring API retrieval jobs, with the response being stored in a Redis DB.
 
 ## Installation
 

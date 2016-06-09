@@ -10,10 +10,12 @@ Gem::Specification.new do |spec|
   spec.email         = ["nsweeting@gmail.com"]
   spec.summary       = "Automated API data retrieval and storage."
   spec.description   = "Automated API data retrieval and storage."
+  spec.homepage      = "https://github.com/nsweeting/headsail"
   spec.license       = "MIT"
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.executables   = ['headsail']
-  spec.require_paths = ["lib"]
+  spec.executables   = %w( headsail )
+  spec.require_paths = %w( lib )
+
   spec.add_runtime_dependency "redis", "~> 3.3"
   spec.add_runtime_dependency "concurrent-ruby", "~> 1.0"
   spec.add_runtime_dependency "oauth", "~> 0.5"

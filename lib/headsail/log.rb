@@ -9,9 +9,12 @@ module Headsail
     log.info("[ \e[32m#{'INFO'}\e[0m ] #{msg}")
   end
 
-  def self.err(msg)
+  def self.err(msg, action)
     log.info("[ \e[31m#{'ERROR'}\e[0m ] #{msg}")
+    exit 1 if action == :exit
   end
+
+  private
 
   def self.build_logger
     logger = Logger.new(STDOUT)

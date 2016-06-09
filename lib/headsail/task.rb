@@ -22,7 +22,11 @@ module Headsail
     private
 
     def request_message
-      @http.code_status == :SUCCESS ? Headsail.info(msg) : Headsail.err(msg)
+      if @http.code_status == :SUCCESS
+        Headsail.info(msg)
+      else
+        Headsail.err(msg, :no_exit)
+      end
     end
 
     def msg

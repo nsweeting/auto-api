@@ -9,8 +9,7 @@ module Headsail
       @method = config['request']['method']
       @uri = build_uri(config['request'])
     rescue
-      Headsail.err('Improper API YAML format.')
-      exit 1
+      Headsail.err('Improper API YAML format.', :exit)
     end
 
     private

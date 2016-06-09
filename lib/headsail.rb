@@ -1,3 +1,3 @@
 require 'headsail/cli'
-require 'headsail/logs'
+require 'headsail/log'
 require 'headsail/version'

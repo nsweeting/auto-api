@@ -6,7 +6,7 @@ module Headsail
   # Handles the start of Headsail via command line
   #
   class CLI
-    attr_reader :launcher
+    attr_reader :launcher, :configure
 
     # Creates a new CLI object, parsing the arguments that are passed to it,
     # and readying a Launcher to be run
@@ -56,8 +56,7 @@ module Headsail
     def parse_options
       @parser.parse!(@argv)
     rescue
-      Headsail.err('Unsupported options entered in CLI.')
-      exit 1
+      Headsail.err('Unsupported options entered in CLI.', :exit)
     end
   end
 end

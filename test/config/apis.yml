@@ -1,3 +1,4 @@
+
 -
   name: Weather1
   timer: 120
@@ -7,7 +8,7 @@
     params:
       lat: '35'
       lon: '139'
-      appid: 2f3902e11e8a119d9a9f7252f2c2bfb4
+      appid: <%= ENV['WEATHER_KEY'] %>
 -
   name: Weather2
   timer: 20
@@ -17,4 +18,17 @@
     params:
       lat: '37'
       lon: '134'
-      appid: 2f3902e11e8a119d9a9f7252f2c2bfb4
+      appid: <%= ENV['WEATHER_KEY'] %>
+-
+  name: Twitter
+  timer: 10
+  oauth:
+    consumer_key: <%= ENV['TWITTER_CONSUMER_KEY'] %>
+    consumer_secret: <%= ENV['TWITTER_CONSUMER_SECRET'] %>
+    access_token: <%= ENV['TWITTER_ACCESS_TOKEN'] %>
+    access_token_secret: <%= ENV['TWITTER_ACCESS_TOKEN_SECRET'] %>
+  request:
+    method: GET
+    uri: https://api.twitter.com/1.1/trends/place.json
+    params:
+      id: '1'
