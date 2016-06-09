@@ -30,7 +30,7 @@ module Headsail
     end
 
     def msg
-      "#{@api.name} / #{@api.method} REQUEST / #{@http.code} - #{@http.code_status.to_s}"
+      "#{@api.name} / #{@api.method} REQUEST / #{@http.code} - #{@http.code_status}"
     end
   end
 end

@@ -22,7 +22,7 @@ module Headsail
     # Creates a new Client object - the main process used for data collection
     #
     def start_client
-      @client = Client.new(@configure)
+      @client = Client.new(@configure.apis)
       @client.run
     end
   end

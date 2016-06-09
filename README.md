@@ -28,7 +28,7 @@ Before using Headsail, we must first create an API task file. This file is simpl
 
 ```yaml
 -
-  #A name for us label our API request. This name is used for the Redis key.
+  #A name for us to label our API request. This name is used for the Redis key.
   name: Weather
   #The time, in seconds, between each API request.
   timer: 20
@@ -61,7 +61,7 @@ Each request that Headsail makes against an API is stored in Redis using lists. 
 Once we have created our API task file, and have a Redis server available, we can start the Headsail client.
 
 
-    $ bundle exec headsail -a path/to/api_tasks.yml -s
+    $ bundle exec headsail -s -a path/to/api_tasks.yml
 
 Headsail will now start making requests against the API's listed in our task file. Once a request is made, another is queued to be processed x seconds from now. With x representing the 'timer' section in our task file.
 

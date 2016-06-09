@@ -4,8 +4,8 @@ module Headsail
   # The main event loop for retrieving data from APIS
   #
   class Client
-    def initialize(configure)
-      @configure = configure
+    def initialize(apis)
+      @apis = apis
       @threads = []
       @tasks = []
       setup_tasks
@@ -21,7 +21,7 @@ module Headsail
     private
 
     def setup_tasks
-      @configure.apis.each { |api| @tasks << Task.new(api) }
+      @apis.each { |api| @tasks << Task.new(api) }
     end
   end
 end
